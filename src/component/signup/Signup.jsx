@@ -3,7 +3,6 @@ import "./Signup.scss";
 import FormInput from "../../form-input/FormInput";
 import Button from "../button/Button";
 import {
-  auth,
   createAuthUserWithEmailAndPassword,
   creatUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
@@ -33,6 +32,7 @@ const Signup = () => {
         email,
         password
       );
+
       await creatUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
